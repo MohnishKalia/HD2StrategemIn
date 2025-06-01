@@ -1,0 +1,459 @@
+{
+  "offensive": {
+    "orbital": [
+      {
+        "name": "Orbital Precision Strike",
+        "code": ["RIGHT", "RIGHT", "UP"],
+        "cooldown": 100,
+        "uses": "Unlimited",
+        "activation": 3
+      },
+      {
+        "name": "Orbital Gatling Barrage",
+        "code": ["RIGHT", "DOWN", "LEFT", "UP", "UP"],
+        "cooldown": 70,
+        "uses": "Unlimited",
+        "activation": 2.05
+      },
+      {
+        "name": "Orbital Airburst Strike",
+        "code": ["RIGHT", "RIGHT", "RIGHT"],
+        "cooldown": 100,
+        "uses": "Unlimited",
+        "activation": 3.45
+      },
+      {
+        "name": "Orbital Napalm Barrage",
+        "code": ["RIGHT", "RIGHT", "DOWN", "LEFT", "RIGHT", "UP"],
+        "cooldown": 240,
+        "uses": "Unlimited",
+        "activation": 6.45
+      },
+      {
+        "name": "Orbital 120MM HE Barrage",
+        "code": ["RIGHT", "RIGHT", "DOWN", "LEFT", "RIGHT", "DOWN"],
+        "cooldown": 180,
+        "uses": "Unlimited",
+        "activation": 6.45
+      },
+      {
+        "name": "Orbital Walking Barrage",
+        "code": ["RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN"],
+        "cooldown": 240,
+        "uses": "Unlimited",
+        "activation": 4.45
+      },
+      {
+        "name": "Orbital 380MM HE Barrage",
+        "code": ["RIGHT", "DOWN", "UP", "UP", "LEFT", "DOWN", "DOWN"],
+        "cooldown": 240,
+        "uses": "Unlimited",
+        "activation": 7.45
+      },
+      {
+        "name": "Orbital Railcannon Strike",
+        "code": ["RIGHT", "UP", "DOWN", "DOWN", "RIGHT"],
+        "cooldown": 210,
+        "uses": "Unlimited",
+        "activation": 0
+      },
+      {
+        "name": "Orbital Laser",
+        "code": ["RIGHT", "DOWN", "UP", "RIGHT", "DOWN"],
+        "cooldown": 300,
+        "uses": 3,
+        "activation": 1
+      },
+      {
+        "name": "Orbital EMS Strike",
+        "code": ["RIGHT", "RIGHT", "LEFT", "DOWN"],
+        "cooldown": 75,
+        "uses": "Unlimited",
+        "activation": 3.45
+      },
+      {
+        "name": "Orbital Gas Strike",
+        "code": ["RIGHT", "RIGHT", "DOWN", "RIGHT"],
+        "cooldown": 75,
+        "uses": "Unlimited",
+        "activation": 3.45
+      },
+      {
+        "name": "Orbital Smoke Strike",
+        "code": ["RIGHT", "RIGHT", "DOWN", "UP"],
+        "cooldown": 100,
+        "uses": "Unlimited",
+        "activation": 3.45
+      }
+    ],
+    "eagle": [
+      {
+        "name": "Eagle 500kg Bomb",
+        "code": ["UP", "RIGHT", "DOWN", "DOWN", "DOWN"],
+        "cooldown": 8,
+        "uses": 1,
+        "activation": 3.45
+      },
+      {
+        "name": "Eagle Strafing Run",
+        "code": ["UP", "RIGHT", "RIGHT"],
+        "cooldown": 8,
+        "uses": 4,
+        "activation": 2.4
+      },
+      {
+        "name": "Eagle 110MM Rocket Pods",
+        "code": ["UP", "RIGHT", "UP", "LEFT"],
+        "cooldown": 8,
+        "uses": 2,
+        "activation": 3.4
+      },
+      {
+        "name": "Eagle Airstrike",
+        "code": ["UP", "RIGHT", "DOWN", "RIGHT"],
+        "cooldown": 8,
+        "uses": 2,
+        "activation": 4.1
+      },
+      {
+        "name": "Eagle Cluster Bomb",
+        "code": ["UP", "RIGHT", "DOWN", "DOWN", "RIGHT"],
+        "cooldown": 8,
+        "uses": 4,
+        "activation": 4.35
+      },
+      {
+        "name": "Eagle Napalm Airstrike",
+        "code": ["UP", "RIGHT", "DOWN", "UP"],
+        "cooldown": 8,
+        "uses": 2,
+        "activation": 4.1
+      },
+      {
+        "name": "Eagle Smoke Strike",
+        "code": ["UP", "RIGHT", "UP", "DOWN"],
+        "cooldown": 8,
+        "uses": 2,
+        "activation": 4.4
+      }
+    ]
+  },
+  "support": {
+    "weapons": [
+      {
+        "name": "CQC-1 One True Flag",
+        "code": ["DOWN", "LEFT", "RIGHT", "RIGHT", "UP"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "MG-43 Machine Gun",
+        "code": ["DOWN", "LEFT", "DOWN", "UP", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "M-105 Stalwart",
+        "code": ["DOWN", "LEFT", "DOWN", "UP", "UP", "LEFT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "MG-206 Heavy Machine Gun",
+        "code": ["DOWN", "LEFT", "UP", "DOWN", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "RS-422 Railgun",
+        "code": ["DOWN", "RIGHT", "DOWN", "UP", "LEFT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "APW-1 Anti-Materiel Rifle",
+        "code": ["DOWN", "LEFT", "RIGHT", "UP", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "GL-21 Grenade Launcher",
+        "code": ["DOWN", "LEFT", "UP", "LEFT", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "TX-14 Sterilizer",
+        "code": ["DOWN", "LEFT", "UP", "DOWN", "LEFT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "FLAM-40 Flamethrower",
+        "code": ["DOWN", "LEFT", "UP", "DOWN", "UP"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "LAS-98 Laser Cannon",
+        "code": ["DOWN", "LEFT", "DOWN", "UP", "LEFT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "LAS-99 Quasar Cannon",
+        "code": ["DOWN", "DOWN", "UP", "LEFT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "ARC-3 Arc Thrower",
+        "code": ["DOWN", "RIGHT", "DOWN", "UP", "LEFT", "LEFT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "MLS-4X Commando",
+        "code": ["DOWN", "LEFT", "UP", "DOWN", "RIGHT"],
+        "cooldown": 120,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "EAT-17 Expendable Anti-tank",
+        "code": ["DOWN", "DOWN", "LEFT", "UP", "RIGHT"],
+        "cooldown": 70,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "AC-8 Autocannon",
+        "code": ["DOWN", "LEFT", "DOWN", "UP", "UP", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "RL-77 Airburst Rocket Launcher",
+        "code": ["DOWN", "UP", "UP", "LEFT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "FAF-14 Spear Launcher",
+        "code": ["DOWN", "DOWN", "UP", "DOWN", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      },
+      {
+        "name": "StA-X3 W.A.S.P. Launcher",
+        "code": ["DOWN", "DOWN", "UP", "DOWN", "RIGHT"],
+        "cooldown": 432,
+        "uses": "Unlimited",
+        "activation": 7.75
+      },
+      {
+        "name": "GR-8 Recoilless Rifle",
+        "code": ["DOWN", "LEFT", "RIGHT", "RIGHT", "LEFT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 4.75
+      }
+    ],
+    "backpacks": [
+      {
+        "name": "SH-32 Shield Generator Pack",
+        "code": ["DOWN", "UP", "LEFT", "RIGHT", "LEFT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "SH-51 Directional Shield Backpack",
+        "code": ["DOWN", "UP", "LEFT", "RIGHT", "UP", "UP"],
+        "cooldown": 300,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "SH-20 Ballistic Shield Backpack",
+        "code": ["DOWN", "LEFT", "DOWN", "DOWN", "UP", "LEFT"],
+        "cooldown": 300,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "LIFT-860 Hover Pack",
+        "code": ["DOWN", "UP", "UP", "DOWN", "LEFT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "B-1 Supply Pack",
+        "code": ["DOWN", "LEFT", "DOWN", "UP", "UP", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "B-100 Portable Hellbomb",
+        "code": ["DOWN", "RIGHT", "UP", "UP", "UP"],
+        "cooldown": 300,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "LIFT-850 Jump Pack",
+        "code": ["DOWN", "UP", "UP", "DOWN", "UP"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "AX/AR-23 'Guard Dog'",
+        "code": ["DOWN", "UP", "LEFT", "UP", "RIGHT", "DOWN"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "AX/LAS-5 'Guard Dog' Rover",
+        "code": ["DOWN", "UP", "LEFT", "UP", "RIGHT", "RIGHT"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      },
+      {
+        "name": "AX/TX-13 'Guard Dog' Dog Breath",
+        "code": ["DOWN", "UP", "LEFT", "UP", "RIGHT", "UP"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 9.75
+      }
+    ],
+    "vehicles": [
+      {
+        "name": "M-102 Fast Recon Vehicle",
+        "code": ["LEFT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN", "UP"],
+        "cooldown": 480,
+        "uses": "Unlimited",
+        "activation": 10.5
+      },
+      {
+        "name": "EXO-49 Emancipator Exosuit",
+        "code": ["LEFT", "DOWN", "RIGHT", "UP", "LEFT", "DOWN", "UP"],
+        "cooldown": 600,
+        "uses": 3,
+        "activation": 10.5
+      },
+      {
+        "name": "EXO-45 Patriot Exosuit",
+        "code": ["LEFT", "DOWN", "RIGHT", "UP", "LEFT", "DOWN", "DOWN"],
+        "cooldown": 600,
+        "uses": 3,
+        "activation": 10.5
+      }
+    ]
+  },
+  "defensive": [
+    {
+      "name": "A/G-16 Gatling Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "LEFT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/MG-43 Machine Gun Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "RIGHT", "UP"],
+      "cooldown": 120,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "E/FLAM-40 Flame Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "DOWN", "UP", "UP"],
+      "cooldown": 150,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/MLS-4X Rocket Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "RIGHT", "LEFT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/AC-8 Autocannon Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "UP", "LEFT", "UP"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/M-23 EMS Mortar Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "DOWN", "RIGHT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/M-12 Mortar Sentry",
+      "code": ["DOWN", "UP", "RIGHT", "RIGHT", "DOWN"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "FX-12 Shield Generator Relay",
+      "code": ["DOWN", "DOWN", "LEFT", "RIGHT", "LEFT", "RIGHT"],
+      "cooldown": 90,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "E/GL-21 Grenadier Battlement",
+      "code": ["DOWN", "RIGHT", "DOWN", "LEFT", "RIGHT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "E/AT-12 Anti-Tank Emplacement",
+      "code": ["DOWN", "UP", "LEFT", "RIGHT", "RIGHT", "RIGHT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "E/MG-101 HMG Emplacement",
+      "code": ["DOWN", "UP", "LEFT", "RIGHT", "RIGHT", "LEFT"],
+      "cooldown": 180,
+      "uses": "Unlimited",
+      "activation": 4.75
+    },
+    {
+      "name": "A/ARC-3 Tesla Tower",
+      "code": ["DOWN", "UP", "RIGHT", "UP", "LEFT", "RIGHT"],
+      "cooldown": 150,
+      "uses": "Unlimited",
+      "activation": 4.75
+    }
+  ]
+}
