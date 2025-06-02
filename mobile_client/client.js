@@ -1,12 +1,12 @@
 (() => {
   const WS_IP = "192.168.1.39"; // Replace with your server's IP
   const WS_HOST = `ws://${WS_IP}:8765`;
-  let socket, loadout = [null, null, null, null], currentSlot = null, inputBuffer = [], stratagems = null;
+  let socket, loadout = [null, null, null, null], currentSlot = null, inputBuffer = [], stratagems = null, isCtrlActive = false; // Added isCtrlActive
   const $ = id => document.getElementById(id);
   const loadoutList = $("loadoutList"), stratagemSelector = $("stratagemSelector"), stratagemList = $("stratagemList"), inputCurrentRow = $("inputCurrentRow");
 
   // Utility
-  const directionSymbol = dir => ({UP: "🠉", DOWN: "🠋", LEFT: "🠈", RIGHT: "🠊"}[dir] || dir);
+  const directionSymbol = dir => ({UP: "⬆\uFE0E", DOWN: "⬇\uFE0E", LEFT: "⬅\uFE0E", RIGHT: "➡\uFE0E"}[dir] || dir);
 
   // UI Rendering
   function renderInputCurrentRow(error = false) {
@@ -138,13 +138,52 @@
   function resetInputBuffer() { inputBuffer = []; renderInputCurrentRow(); }
   function sendPress(direction) {
     if (socket?.readyState === WebSocket.OPEN) {
-      socket.send(JSON.stringify({ button: direction }));
+      socket.send(JSON.stringify({ button: direction })); // ctrlActive removed
     }
   }
   function setupArrowButtons() {
     [["upBtn", "UP"], ["downBtn", "DOWN"], ["leftBtn", "LEFT"], ["rightBtn", "RIGHT"]].forEach(([id, dir]) => {
-      $(id).addEventListener("pointerdown", e => { e.preventDefault(); handleInput(dir); });
+      const btn = $(id);
+      btn.addEventListener("pointerdown", e => { e.preventDefault(); if (!btn.classList.contains('disabled')) handleInput(dir); });
     });
+  }
+
+  function setArrowButtonsEnabled(enabled) {
+    ["upBtn", "downBtn", "leftBtn", "rightBtn"].forEach(id => {
+      const btn = $(id);
+      if (enabled) {
+        btn.classList.remove('disabled');
+      } else {
+        btn.classList.add('disabled');
+      }
+    });
+  }
+
+  function setupSkullButton() {
+    const skullBtn = document.querySelector('.skull-icon');
+    const skullStateText = $('skullStateText');
+    if (skullBtn && skullStateText) {
+      skullStateText.textContent = isCtrlActive ? 'ON' : 'OFF';
+      if (!isCtrlActive) skullStateText.classList.remove('active');
+      else skullStateText.classList.add('active');
+      setArrowButtonsEnabled(isCtrlActive); // Disable arrows if OFF on load
+      skullBtn.addEventListener('click', () => {
+        isCtrlActive = !isCtrlActive;
+        if (isCtrlActive) {
+          skullBtn.classList.add('active');
+          skullStateText.classList.add('active');
+          skullStateText.textContent = 'ON';
+        } else {
+          skullBtn.classList.remove('active');
+          skullStateText.classList.remove('active');
+          skullStateText.textContent = 'OFF';
+        }
+        setArrowButtonsEnabled(isCtrlActive); // Enable/disable arrows on toggle
+        if (socket?.readyState === WebSocket.OPEN) {
+          socket.send(JSON.stringify({ ctrlState: isCtrlActive }));
+        }
+      });
+    }
   }
 
   // WebSocket
@@ -188,5 +227,6 @@
     renderLoadout();
     renderInputCurrentRow();
     connect();
+    setupSkullButton(); // Call the new setup function
   });
 })();

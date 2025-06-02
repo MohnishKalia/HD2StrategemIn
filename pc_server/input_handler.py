@@ -29,3 +29,23 @@ def press_key(key_name: str):
     
     # Give a small pause for key registration
     time.sleep(0.05)
+
+def press_key_down(key_name: str):
+    """
+    Presses and holds down the given key_name via pyautogui.
+    """
+    logging.info(f"Pressing key DOWN: {key_name}")
+    if USE_PYAUTOGUI:
+        pyautogui.keyDown(key_name.lower())
+    else:
+        logging.debug(f"Would have pressed DOWN: {key_name}")
+
+def release_key(key_name: str):
+    """
+    Releases the given key_name via pyautogui.
+    """
+    logging.info(f"Releasing key UP: {key_name}")
+    if USE_PYAUTOGUI:
+        pyautogui.keyUp(key_name.lower())
+    else:
+        logging.debug(f"Would have released UP: {key_name}")

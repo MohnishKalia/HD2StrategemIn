@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Helldivers 2 Stratagem Device</title>
   <style>
     html, body { margin: 0; padding: 0; background: #181a1b; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; width: 100vw; height: 100vh; overflow: hidden; }
@@ -10,8 +10,66 @@
     .input-panel { width: 50vw; min-width: 180px; background: #232426; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 3px solid #333; box-shadow: 2px 0 12px #0006; z-index: 1; }
     .input-row { display: flex; justify-content: center; margin-bottom: 16px; }
     .arrow-btn { width: 64px; height: 64px; background: #222; border-radius: 10px; margin: 0 10px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: #ffe600; border: 2.5px solid #ffe600; cursor: pointer; user-select: none; touch-action: manipulation; transition: background 0.2s, color 0.2s; }
+    .arrow-btn.disabled {
+      opacity: 0.4;
+      filter: grayscale(1);
+      pointer-events: none;
+      cursor: not-allowed;
+    }
     .arrow-btn:active { background: #ffe600; color: #222; }
-    .skull-icon { width: 60px; height: 60px; background: #ffe600; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 38px; color: #181a1b; font-weight: bold; box-shadow: 0 2px 8px #0006; margin: 0 auto 18px auto; }
+    
+    /* Skull Icon - Default (OFF) state */
+    .skull-icon {
+      min-width: 90px;
+      min-height: 48px;
+      width: auto;
+      height: auto;
+      padding: 8px 14px; /* Add top and bottom padding */
+      background: #4a4a4a;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1em;
+      color: #aaa;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin: 0 auto 18px auto;
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+      position: relative;
+      gap: 8px;
+    }
+
+    /* Skull Icon - Active (ON) state */
+    .skull-icon.active {
+      background-color: #ffe600;
+      color: #181a1b;
+      box-shadow: 0 0 10px #ffe600, 0 0 15px #ffe600;
+    }
+
+    .skull-state-text {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #aaa;
+      transition: color 0.2s;
+      letter-spacing: 0.04em;
+      text-align: left;
+      line-height: 1.1;
+      user-select: none;
+      margin-left: 0.2em;
+    }
+
+    .skull-icon.active .skull-state-text {
+      color: #181a1b;
+    }
+
+    @media (max-width: 900px) {
+      .skull-icon { min-width: 60px; min-height: 32px; padding: 0 6px; font-size: 1.2em; }
+      .skull-state-text { font-size: 0.9em; }
+    }
+
     .input-current-row { display: flex; justify-content: center; gap: 4px; }
     .input-current-arrow { width: 32px; height: 32px; background: #ffe600; color: #222; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: bold; border: 2px solid #ffe600; transition: background 0.2s, color 0.2s, border 0.2s; }
     .input-current-arrow.error { background: #f44336; color: #fff; border-color: #f44336; }
@@ -39,7 +97,7 @@
     .strategem-code-arrow { width: 30px; height: 30px; background: #555; display: flex; align-items: center; justify-content: center; font-size: 16px; border-radius: 3px; }
     .close-btn { align-self: flex-end; padding: 10px 20px; background: #f44336; color: white; border: none; border-radius: 5px; margin-bottom: 20px; cursor: pointer; }
     .category-title { padding: 10px; background: #444; margin-top: 10px; margin-bottom: 5px; border-radius: 5px; }
-    @media (max-width: 900px) { .input-panel { min-width: 120px; } .arrow-btn { width: 48px; height: 48px; font-size: 1.5rem; } .skull-icon { width: 40px; height: 40px; font-size: 24px; } }
+    @media (max-width: 900px) { .input-panel { min-width: 120px; } .arrow-btn { width: 48px; height: 48px; font-size: 1.5rem; } .skull-icon { min-width: 60px; min-height: 32px; padding: 0 6px; font-size: 1.2em; } }
     .input-panel.flash-error { animation: flashRed 0.3s; }
     @keyframes flashRed { 0% { background: #f44336; } 100% { background: #232426; } }
     .input-panel.flash-success { animation: flashGreen 0.3s; }
@@ -80,7 +138,10 @@
 <body>
   <div class="landscape-root">
     <div class="input-panel">
-      <div class="skull-icon">&#128128;</div>
+      <div class="skull-icon" title="Toggle Stratagem Mode (CTRL)">
+        <span style="font-size:1.3em;line-height:1;">&#128128;</span>
+        <span id="skullStateText" class="skull-state-text">OFF</span>
+      </div>
       <div class="input-buffer-box">
         <div class="input-current-row" id="inputCurrentRow"></div>
       </div>
