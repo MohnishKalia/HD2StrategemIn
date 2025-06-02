@@ -34,11 +34,6 @@ async def handle_connection(websocket):
                     logging.info(f"Executing key press: {btn} (CTRL held by server: {ctrl_key_active_for_this_connection})")
                     press_key(btn.lower())
             
-            elif "key" in data:
-                key = data["key"]
-                logging.info(f"Executing key press: {key} from {client_address}")
-                press_key(key.lower())
-
             elif "ctrlState" in data:
                 new_ctrl_state = data["ctrlState"]
                 if new_ctrl_state != ctrl_key_active_for_this_connection:

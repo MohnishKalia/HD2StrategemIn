@@ -29,7 +29,7 @@ A mobile-friendly web UI and Python backend to allow users to send strategem inp
 
 ```powershell
 cd pc_server
-pip install websockets pyautogui
+pip install -r requirements.txt
 ```
 
 ### 2. Start the WebSocket server

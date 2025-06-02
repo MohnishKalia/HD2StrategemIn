@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 
 try:
-    import pyautogui
+    import pydirectinput as pyautogui
     USE_PYAUTOGUI = True
 except ImportError:
     USE_PYAUTOGUI = False
